@@ -1,0 +1,7 @@
+Para poder arrancar el sitio se necesita agregar la base de datos que esta adjunto en sql server
+
+Agregar las dependencias de node.js y encender la api (app.js)
+
+entrar a la ventana index.html 
+
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Libreria</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-3 ">
+        <div class="container position-relative">
+            <a class="text-white navbar-brand" href="index.html">Listado de Libros</a>
+
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                    <a class="nav-link" href="listCategory.html">Categoria</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="listUsers.html">Usuario</a>
+                </li>
+            </ul>
+            <!-- <div class="collapse navbar-collapse" id="navbarScroll">
+                <form class="d-flex">
+                    <input id="Search" class="form-control me-2" type="search" placeholder="Buscar Usuario" aria-label="Search">
+                    <button onclick="search()" class="btn btn-warning" type="button">Buscar</button>
+                </form>
+            </div> -->
+        </div>
+    </nav>
+
+    <div class="container">
+        <br><br><br><br>
+        <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+                <h3 class="login-heading mb-4">Registrar Libro!</h3>
+                <p id="alerta" style="color: red;"></p>
+
+                <!-- Sign In Form -->
+                <form id="login">
+                    <p style="color: red;" id="alerta"></p>
+
+                    <label for="floatingInput">Nombre de Libro</label>
+                    <input type="nombre" class="form-control" id="nombre" placeholder="Nombre completo del libro">
+                    <br>
+                    <label for="floatingPassword">Nombre del Autor</label>
+                    <input type="text" class="form-control" id="autor" placeholder="Nombre completo del autor">
+                    <br>
+                    <label for="floatingPassword">Categoria</label>
+                    <div id="category">
+                       
+                    </div>
+                    <br>
+                    <label for="floatingPassword">Fecha de publicacion</label>
+                    <input type="date" class="form-control" id="date" placeholder="fecha">
+                    <br>
+                    <label for="floatingPassword">Disponibilidad</label>
+                    <br>
+                   
+                        <input type="checkbox" name="color" value="true" id="Disponible"> Disponible <br>  
+                        <br>  
+                      
+
+                    <div class="d-grid">
+                        <button onclick="addBook()" style="background-color: rgba(255, 196, 0);"
+                            class="btn btn-lg  btn-login text-uppercase fw-bold mb-2" type="button">Registrar</button>
+                    </div>
+                </form>
+                <script src="scripts/newBook.js"></script>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+</html>
