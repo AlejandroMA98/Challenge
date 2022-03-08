@@ -22,22 +22,22 @@ module.exports.bookscategory = async () => {
     return result;
 }
 
-// module.exports.updateiduser = async (user) => {
-//     let response = new nameModel();
-//     let result = await response.updateid(user);
-//     return result;
-// }
+module.exports.updatebookid = async (user) => {
+    let response = new bookModel();
+    let result = await response.updateid(user);
+    return result;
+}
 
-// module.exports.updateUser = async (user) => {
-//     let response = new nameModel();
-//     let result = await response.update(user);
-//     if (result) {
-//         return "El usuario a sido actualizado";
-//     } else {
-//         return "No se pudo actualizar el usuario";
-//     }
+module.exports.updatebook = async (user) => {
+    let response = new bookModel();
+    let result = await response.update(user);
+    if (result) {
+        return "El libro a sido actualizado";
+    } else {
+        return "No se pudo actualizar el libro";
+    }
 
-// }
+}
 module.exports.deletebook = async (user) => {
     let response = new bookModel();
     let result = await response.delete(user);

@@ -6,14 +6,14 @@ async function addBook(){
     
     Disponible = document.getElementById("Disponible").value;
 
-     console.log(category);
+     console.log(date);
 
     
     
-    if(nombre!="" && autor!= "" && date!= "" ){
-    let add = {name_book:nombre, name_autor:autor, category:category, published_date:date, condition:disponid};
+    if(nombre!="" && autor!= "" && category!= "" && date!= "" && Disponible!= ""){
+    let add = {name_book:nombre, name_autor:autor, category:category, published_date:date, condition:Disponible};
 
-    let response = await fetch('http://localhost:3000/adduser',{
+    let response = await fetch('http://localhost:3000/addbook',{
     method: 'POST',
     headers: {
         'Content-Type' : 'application/json'
@@ -23,7 +23,7 @@ async function addBook(){
     });
         let aqui = await response.text();
         console.log(aqui);
-        location.href="listBook.html";
+        location.href="index.html";
     }else{
         document.getElementById("alerta").innerHTML = "Llena todos los campos para poder registrar a un Libro";
     }

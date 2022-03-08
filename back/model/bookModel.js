@@ -6,7 +6,7 @@ module.exports = class booksModel {
     }
     
     async list(){
-        let result = await sequelize.query("SELECT * FROM users AS [u] FULL JOIN books AS [b] ON [u].id = [b].[user_id] INNER JOIN category AS [c] ON [b].category = [c].id;");
+        let result = await sequelize.query("SELECT [b].id, [b].name_book, [b].name_autor, [c].name_c , [b].published_date, [b].condition, [u].name_user From users AS [u] FULL JOIN books AS [b] ON [u].id = [b].[user_id] INNER JOIN category AS [c] ON [b].category = [c].id;");
         return result;
     }
     async add(user){
@@ -18,14 +18,14 @@ module.exports = class booksModel {
         return result;
     }
 
-    // async updateid(user){
-    //     let result = await sequelize.query("SELECT * FROM users WHERE id = "+user+";");
-    //     return result;
-    // }
-    // async update(update){
-    //     let result = await sequelize.query("UPDATE users SET [name] = '"+update.name+"', first_name = '"+update.first_name+"',last_name = '"+update.last_name+"',adress = '"+update.adress+"',phone = '"+update.phone+"'WHERE [id] = '"+update.id+"';");
-    //     return result;
-    // }
+    async updateid(user){
+        let result = await sequelize.query("SELECT [b].id, [b].name_book, [b].name_autor, [b].category , [b].published_date, [b].condition, [u].name_user From users AS [u] FULL JOIN books AS [b] ON [u].id = [b].[user_id] INNER JOIN category AS [c] ON [b].category = [c].id WHERE [b].id = "+user+";");
+        return result;
+    }
+    async update(update){
+        let result = await sequelize.query("UPDATE books SET name_book = '"+update.name_book+"', name_autor = '"+update.name_autor+"',category = '"+update.category+"',published_date = '"+update.published_date+"',condition = '"+update.condition+"'WHERE [id] = '"+update.id+"';");
+        return result;
+    }
     async delete (userdelete){
         let result = await sequelize.query("DELETE FROM books WHERE [id]='"+userdelete+"';");
         return result;

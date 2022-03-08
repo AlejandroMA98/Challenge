@@ -34,7 +34,7 @@ async function listbook() {
              <td id="phone">${listbooks[0][i].name_user}</td>
              <td>
                  <button onclick="getId(${listbooks[0][i].id})" style="background-color: rgb(255, 196, 0);" class="btn" >Actualizar</button>
-                 <button onclick="deleteUser(${listbooks[0][i].id})" style="background-color: rgb(255, 196, 0);" class="btn" >Remover</button>
+                 <button onclick="deleteBook(${listbooks[0][i].id})" style="background-color: rgb(255, 196, 0);" class="btn" >Remover</button>
              </td>
              </tr>`;
              
@@ -45,3 +45,21 @@ async function listbook() {
      
 }
 listbook();
+
+async function getId(Num){
+    console.log(Num)
+    location.href="updateBook.html";
+    localStorage.setItem("ID",Num);
+}
+
+async function deleteBook(Num){
+
+    let response = await fetch('http://localhost:3000/deletebook/'+Num,{
+    method: 'DELETE',
+    headers: {
+        'Content-Type' : 'application/json'
+        
+    }
+});
+location.href="index.html";
+}
